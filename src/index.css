@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 32% 7%;
+    --foreground: 210 20% 96%;
+    --card: 222 24% 11%;
+    --muted: 218 18% 18%;
+    --muted-foreground: 215 16% 68%;
+    --border: 218 18% 22%;
+    --primary: 196 92% 48%;
+    --primary-foreground: 220 35% 8%;
+    --success: 152 72% 42%;
+    --warning: 42 95% 55%;
+    --danger: 0 84% 62%;
+    --hero-sub: 215 16% 72%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: "Geist Sans", system-ui, sans-serif;
+  }
+
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .app-card {
+    @apply rounded-lg border border-border bg-card shadow-sm;
+  }
+
+  .field {
+    @apply rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground outline-none transition focus:border-primary;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-secondary {
+    @apply border border-border bg-muted text-foreground hover:bg-muted/80;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full border border-border px-2 py-0.5 text-xs font-medium;
+  }
+}

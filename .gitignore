@@ -1,0 +1,10 @@
+node_modules/
+dist/
+netlify-dist/
+*.tsbuildinfo
+*.log
+.env
+.env.*
+.vite/
+.vite-temp/
+.DS_Store
